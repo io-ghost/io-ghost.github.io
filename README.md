@@ -1,2 +1,6 @@
 # io-ghost.github.io
-Project landing page (pre-alpha, no results yet)
+
+Landing page for the pre-alpha "Closer" project (working name).
+Served by GitHub Pages from the `main` branch of this repository.
+
+It intentionally makes no performance claim: no benchmark has been run yet.

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Closer (working name) - pre-alpha</title>
+<meta name="description" content="A neutral last-mile closure loop for timing and DRC ECOs. Pre-alpha: no benchmark run, no claims.">
+<style>
+:root{--bg:#0f1115;--fg:#e6e8ee;--muted:#9aa3b2;--line:#242a35;--card:#161a21;--accent:#58c4a5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:64px 22px 80px}
+h1{font-size:30px;letter-spacing:-.02em;margin:0 0 6px}
+.tag{color:var(--muted);margin:0 0 32px}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:38px 0 10px;font-weight:600}
+p{margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 8px}
+.card.warn{border-color:#7a5418;background:#231a10;color:#f0c98a}
+ul{margin:0;padding-left:20px}
+li{margin:4px 0}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid #245c4d}
+a:hover{border-bottom-color:var(--accent)}
+footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Closer <span style="color:var(--muted);font-size:16px">&mdash; working name</span></h1>
+  <p class="tag">A neutral last-mile closure loop for timing and DRC ECOs.</p>
+
+  <div class="card warn">
+    <strong>Pre-alpha. There are no results here.</strong><br>
+    No benchmark has been run. There are no customers, no pilots, and no
+    performance claims. If you are reading this to evaluate performance, stop:
+    there is nothing to evaluate yet.
+  </div>
+
+  <h2>The question</h2>
+  <p>
+    Most of PPA optimisation is automated. The last stretch &mdash; post-route
+    timing, DRC and congestion cleanup &mdash; is still expert manual work, and it
+    is where tapeouts slip. The question this project tests is narrow:
+  </p>
+  <p>
+    <em>Given a routed netlist that fails timing or DRC, which function-preserving
+    edit sequence closes the most violation per unit of compute &mdash; and can the
+    choice be learned cheaply enough to beat a tuned baseline, reproducibly?</em>
+  </p>
+
+  <h2>What is being built</h2>
+  <ul>
+    <li>A harness that parses timing and DRC reports and records every experiment.</li>
+    <li>A library of edits that cannot change logic function by construction.</li>
+    <li>A structural audit between netlists (a stand-in, not formal equivalence).</li>
+    <li>An append-only audit trail, so every change is attributable and reversible.</li>
+    <li>Open-source flows first (OpenROAD); commercial tools only later, on a customer&#39;s licenses.</li>
+  </ul>
+
+  <h2>How a result will be claimed</h2>
+  <p>
+    The methodology is written before any run: fixed designs, fixed tool versions
+    and image digests, three seeds, published compute budgets, a tuned baseline as
+    the comparison, and the limitations stated up front. If the loop does not beat
+    a tuned baseline, that gets published too.
+  </p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><a href="https://github.com/io-ghost/closer-eda">github.com/io-ghost/closer-eda</a> &mdash; the harness</li>
+    <li><a href="https://github.com/io-ghost/closer-eda/issues">Issues</a> &mdash; how to reach us while this page has no address</li>
+  </ul>
+
+  <footer>
+    This page deliberately makes no performance claim. It will keep saying so
+    until a reproducible result exists in the public repository.
+  </footer>
+</main>
+</body>
+</html>
